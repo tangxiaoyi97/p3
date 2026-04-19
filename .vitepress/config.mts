@@ -33,10 +33,10 @@ const firstfile = (subDir: string) => {
   }
 }
 
-const folders = ['physik']
+const folders = ['physik', 'lecturenotes']
 
 export default defineConfig({
-  base: "/p2/",
+  base: "/p3/",
   vite: {
     server: {
       allowedHosts: true
@@ -62,12 +62,21 @@ export default defineConfig({
   },
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Weltbild', link: firstfile('physik/01_weltbild') },
-      { text: 'Elektrizität', link: firstfile('physik/02_elektrizitaet') },
-      { text: 'Elektromagnetismus', link: firstfile('physik/03_elektromagnetismus') },
-      { text: 'Gravitationstheorie', link: firstfile('physik/04_gravitationstheorie') },
-      { text: 'Rätsel', link: firstfile('physik/99_raetsel') }
+      {
+        text: 'notes',
+        items: [
+          { text: 'Home', link: '/' },
+          { text: 'Weltbild', link: firstfile('physik/01_weltbild') },
+          { text: 'Elektrizität', link: firstfile('physik/02_elektrizitaet') },
+          { text: 'Elektromagnetismus', link: firstfile('physik/03_elektromagnetismus') },
+          { text: 'Gravitationstheorie', link: firstfile('physik/04_gravitationstheorie') },
+          { text: 'Rätsel', link: firstfile('physik/99_raetsel') }
+        ]
+      },
+      {
+        text: 'lecture',
+        items: [{ text: 'Lecture Notes', link: '/lecturenotes/index.md' }]
+      }
     ],
 sidebar: generateSidebar(
       folders.map(folder => ({
@@ -85,11 +94,10 @@ sidebar: generateSidebar(
       }))
     ),
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/tangxiaoyi97/p2' },
+      { icon: 'github', link: 'https://github.com/tangxiaoyi97/p3' },
       { icon: 'discord', link: 'https://discord.gg/byDV7RpK' },
       { icon: 'buymeacoffee', link: 'https://buymeacoffee.com/tangxy97' }
 
     ]
   }
 })
-
