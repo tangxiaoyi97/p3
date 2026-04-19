@@ -13,3 +13,4 @@ title: "LECTURE NOTES"
 - [9 Astrophysik außerhalb unseres Sonnensystems](./09_astrophysikAusserhalbUnseresSonnensystems/09_astrophysikAusserhalbUnseresSonnensystems.md)
 
 *Quelle*: Physik Mitschrift.docx
+*Author*: ein mysteriöser altschotte
