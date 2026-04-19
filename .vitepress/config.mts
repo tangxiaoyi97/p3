@@ -36,7 +36,7 @@ const firstfile = (subDir: string) => {
 const folders = ['physik', 'lecturenotes']
 
 export default defineConfig({
-  base: "/p3/",
+  base: "/",
   vite: {
     server: {
       allowedHosts: true
