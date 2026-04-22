@@ -631,7 +631,7 @@ def import_docx(
 
 
 def main() -> None:
-    out_root = Path("lecturenotes")
+    out_root = Path("compact")
     media_dir = out_root / "media" / "physik_mitschrift"
     media_dir.mkdir(parents=True, exist_ok=True)
 
@@ -644,7 +644,7 @@ def main() -> None:
         index_lines.append(f"- [{ch.title}](./{chap_rel.as_posix()})")
     write_md(
         out_root / "index.md",
-        {"title": "LECTURE NOTES"},
+        {"title": "Compact"},
         index_lines + ["", "*Quelle*: Physik Mitschrift.docx"],
     )
 
@@ -665,14 +665,14 @@ def main() -> None:
 
         write_md(
             ch.overview_file,
-            {"title": ch.title, "tags": ["lecturenotes", "Physik Mitschrift"]},
+            {"title": ch.title, "tags": ["compact", "Physik Mitschrift"]},
             page_body(overview_lines),
         )
 
         for sec in ch.sections:
             write_md(
                 sec.file,
-                {"title": sec.title, "tags": ["lecturenotes", "Physik Mitschrift"]},
+                {"title": sec.title, "tags": ["compact", "Physik Mitschrift"]},
                 page_body(sec.lines),
             )
 

@@ -1,4 +1,7 @@
 {
+  "name": "p3",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "docs:dev": "vitepress dev .",
     "docs:build": "vitepress build .",
@@ -8,6 +11,7 @@
     "katex": "^0.16.28",
     "markdown-it-mark": "^4.0.0",
     "markdown-it-texmath": "^1.0.0",
+    "vitepress-headup": "github:tangxiaoyi97/vitepress-headup",
     "vitepress-sidebar": "^1.33.1",
     "vp-raspberry": "github:tangxiaoyi97/vitepress-Raspberry-theme#master",
     "vue": "^3.5.27"

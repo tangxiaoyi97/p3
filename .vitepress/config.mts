@@ -7,6 +7,7 @@ import texmath from 'markdown-it-texmath'
 import katex from 'katex'
 // @ts-ignore
 import markdownItMark from 'markdown-it-mark'
+import { headupPlugin } from 'vitepress-headup/plugin'
 
 const firstfile = (subDir: string) => {
   const docsRoot = '.'
@@ -33,11 +34,31 @@ const firstfile = (subDir: string) => {
   }
 }
 
-const folders = ['physik', 'lecturenotes']
+const folders = ['physik', 'compact']
 
 export default defineConfig({
   base: "/",
   vite: {
+    plugins: [
+      headupPlugin({
+        hud: {
+          enabled: true,
+          label: '{commit}',
+          title: 'Git commit {commit}'
+        },
+        detail: {
+          enabled: true,
+          title: 'Archive status',
+          iconLabel: 'Open archive status'
+        },
+        lastUpdated: {
+          include: ['compact', 'physik', '.vitepress', 'index.md', 'package.json']
+        },
+        custom: {
+          project: 'physics compact archive'
+        }
+      })
+    ],
     server: {
       allowedHosts: true
     }
@@ -74,8 +95,8 @@ export default defineConfig({
         ]
       },
       {
-        text: 'lecture',
-        items: [{ text: 'Lecture Notes', link: '/lecturenotes/index.md' }]
+        text: 'Compact',
+        items: [{ text: 'Compact', link: '/compact/index.md' }]
       }
     ],
 sidebar: generateSidebar(
